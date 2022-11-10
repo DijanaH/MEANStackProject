@@ -1,0 +1,44 @@
+.container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    
+    
+  }
+  
+  @media (max-width : 1300px){
+    body .container{
+      margin-top: 40px;
+      margin-left: 270px;
+    }
+  
+  }
+
+  .dodaj{
+    background-color: rgb(81, 146, 106);
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    text-transform: lowercase;
+    display: inline-block;
+    opacity: 0.6; 
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+  }
+  
+  .dodaj:hover {opacity: 1}
+  
+  input[type=text] {
+    padding: 10px 18px;
+    margin: 8px 0;
+    border: 2px solid hsl(143, 40%, 42%);
+    border-radius: 4px;
+    
+  }
+
+  .labela {
+      color: antiquewhite;
+      font-size: 25px;
+      
+  }

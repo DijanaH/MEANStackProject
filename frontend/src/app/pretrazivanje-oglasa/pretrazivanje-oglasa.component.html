@@ -1,0 +1,122 @@
+<app-kupac></app-kupac>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form class="container">
+        <div class="pretraga-container">
+            <label> Tip nekretnine :</label>
+            <select required name="tip" [(ngModel)]='pretraga_tip_nekretnine'>
+                <option>stan</option>
+                <option>kuca</option>
+                <option>vikendica</option>
+                <option>lokal</option>
+                <option>magacin</option>
+            </select>
+
+            <label>Lokacija (jedna ili vise - odvojene zarezom):</label>
+
+            <input type="text" name="lokacija" [(ngModel)]='pretraga_lokacija' placeholder="grad/opstina/mikro lokacija"
+                pattern="\w+(( ?)|( - ?))\w+/\w+(( ?)|( - ?))\w+/\w+(( ?)|( - ?))\w+(,\w+(( ?)|( - ?))\w+/\w+(( ?)|( - ?))\w+/\w+(( ?)|( - ?))\w+)*"
+                #reglokacija="ngModel">
+
+            <label>Cena od:</label>
+            <input type="text" name="cena" [(ngModel)]='pretraga_cena_do' pattern="\d+" #regcena="ngModel">
+
+
+            <label>Kvadratura do:</label>
+            <input type="text" name="kvadratura" [(ngModel)]='pretraga_kvadratura_od' pattern="\d+"
+                #regkvadratura="ngModel">
+
+            <label>Minimalan broj soba:</label>
+            <input type="text" name="br_soba" [(ngModel)]='pretraga_min_br_soba' pattern="(^[1-5]$)|(^[1-4]\.5$)|(5\+)"
+                #regbrsoba="ngModel">
+
+
+            <div *ngIf="reglokacija.errors?.pattern" class="regexgreske">
+                ! Lokacija nije u odgovarajucem formatu
+            </div>
+            <div *ngIf="regcena.errors?.pattern" class="regexgreske">
+                ! Cena mora biti broj
+            </div>
+            <div *ngIf="regkvadratura.errors?.pattern" class="regexgreske">
+                ! Kvadratura mora biti broj
+            </div>
+            <div *ngIf="regbrsoba.errors?.pattern" class="regexgreske">
+                ! Broj soba (od 1, 1.5, 2, 2.5... do 5+)
+            </div>
+
+
+            <div *ngIf="poruka" class="poruka">
+                <div *ngFor="let p of poruka">
+                    {{p}}
+                </div>
+            </div>
+
+
+            <div
+                *ngIf="!reglokacija.errors?.pattern && !regcena.errors?.pattern && !regkvadratura.errors?.pattern && !regbrsoba.errors?.pattern">
+                <button (click)='pretrazi()'>Pretrazi</button>
+            </div>
+        </div>
+
+
+        <div class="rezultati">
+
+            <table class="table table-striped">
+
+                <tr *ngFor="let o of oglasi| paginate: {id: 'listing_pagination', 
+            itemsPerPage:2, 
+            currentPage:page,
+            totalItems: totalRecords }">
+                    <div class="nekretnina">
+                        <div>
+                            Naziv: <a routerLink="/detalji_nekretnine/{{o.id}}">{{o.naziv}}</a>
+                        </div>
+                        <div>
+                            Lokacija: {{o.lokacija}}
+                        </div>
+                        <div>
+                            Kvadratura: {{o.kvadratura}}
+                        </div>
+                        <div>
+                            Broj soba: {{o.broj_soba}}
+                        </div>
+                        <div>
+                            Spratnost : {{o.spratnost}}
+                        </div>
+                        <div>
+                            Opis: {{o.opis}}
+                        </div>
+                        <div>
+                            Cena: {{o.cena}}
+                        </div>
+                        <div>
+                            Prosecna cena :{{o.prosecna_cena}}
+                        </div>
+                        
+                    </div>
+                    <br />
+                </tr>
+            </table>
+            <div *ngIf='oglasi'>
+                <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true"
+                    (pageChange)="page=$event">
+                </pagination-controls>
+            </div>
+            <br />
+        </div>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<app-oglasivac></app-oglasivac>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="container">
+        <div class="grid-con">
+            <label class="naslov"><b>Podaci za izmenu:</b></label>
+            <div class="podaci">
+                <div>
+                    Telefon:<input type="text" name="telefon" [(ngModel)]="telefon" pattern="\d{10}" #regtel="ngModel">
+                </div>
+                <div>
+                    Mejl:<input type="text" name="mejl" [(ngModel)]="mejl" pattern="^\w{3,}@\w+\.\w{2,3}$"
+                        #regmejl="ngModel">
+                </div>
+                <div>
+                    Agencija:
+                    <select name="agencija" [(ngModel)]="agencija">
+                        <option *ngFor="let a of sveagencije" [value]="a.naziv">{{a.naziv}}</option>
+                    </select>
+                </div>
+                <div *ngIf="agencija && ulogovan.oglasivactip=='prodavac'">
+                    Br Licence:
+                    <input type="text" name="brlicence" [(ngModel)]="br_licence" >
+                    Niste do sad bili zaposleni.
+                </div>
+                <div>
+                    <button *ngIf="!regmejl.errors?.pattern && !regtel.errors?.pattern"
+                        (click)="izmeni()">Izmeni</button>
+                </div>
+            </div>
+            <div *ngIf="regmejl.errors?.pattern" class="reg">
+                Mejl nije u odgovarajucem formatu.
+            </div>
+            <div *ngIf="regtel.errors?.pattern" class="reg">
+                Telefon treba da ima 10 brojeva.
+            </div>
+            
+            
+            <div *ngIf="poruka">
+                {{poruka}}
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

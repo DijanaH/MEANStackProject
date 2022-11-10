@@ -1,0 +1,112 @@
+{
+    "idOglas" : 1,
+    "terasa" : true,
+    "podrum" : true,
+    "internet" : false,
+    "lodja" : false,
+    "garaza" : true,
+    "interfon" : true,
+    "francbalkon" : false,
+    "basta" : true,
+    "telefon" : true,
+    "lift" : false,
+    "klima" : true
+}
+{
+    "idOglas" : 2,
+    "terasa" : true,
+    "podrum" : false,
+    "internet" : true,
+    "lodja" : false,
+    "garaza" : false,
+    "interfon" : true,
+    "francbalkon" : false,
+    "basta" : false,
+    "telefon" : true,
+    "lift" : true,
+    "klima" : true
+}
+{
+    "idOglas" : 3,
+    "terasa" : false,
+    "podrum" : false,
+    "internet" : true,
+    "lodja" : false,
+    "garaza" : false,
+    "interfon" : false,
+    "francbalkon" : false,
+    "basta" : false,
+    "telefon" : false,
+    "lift" : false,
+    "klima" : true
+}
+{
+    "idOglas" : 4,
+    "terasa" : true,
+    "podrum" : true,
+    "internet" : false,
+    "lodja" : false,
+    "garaza" : false,
+    "interfon" : false,
+    "francbalkon" : true,
+    "basta" : true,
+    "telefon" : true,
+    "lift" : false,
+    "klima" : false
+}
+{
+    "idOglas" : 5,
+    "terasa" : false,
+    "podrum" : true,
+    "internet" : true,
+    "lodja" : false,
+    "garaza" : true,
+    "interfon" : false,
+    "francbalkon" : false,
+    "basta" : false,
+    "telefon" : true,
+    "lift" : false,
+    "klima" : false
+}
+{
+    "idOglas" : 6,
+    "terasa" : true,
+    "podrum" : true,
+    "internet" : true,
+    "lodja" : false,
+    "garaza" : false,
+    "interfon" : false,
+    "francbalkon" : false,
+    "basta" : true,
+    "telefon" : true,
+    "lift" : false,
+    "klima" : false
+}
+{
+    "idOglas" : 7,
+    "terasa" : false,
+    "podrum" : false,
+    "internet" : true,
+    "lodja" : false,
+    "garaza" : false,
+    "interfon" : false,
+    "francbalkon" : false,
+    "basta" : true,
+    "telefon" : true,
+    "lift" : false,
+    "klima" : true
+}
+{
+    "idOglas" : 8,
+    "terasa" : true,
+    "podrum" : false,
+    "internet" : false,
+    "lodja" : false,
+    "garaza" : true,
+    "interfon" : false,
+    "francbalkon" : false,
+    "basta" : true,
+    "telefon" : true,
+    "lift" : false,
+    "klima" : false
+}

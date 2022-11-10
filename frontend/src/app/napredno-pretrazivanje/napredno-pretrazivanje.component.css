@@ -1,0 +1,172 @@
+.container{
+    background-color: #e9f5ffc7;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width:700px;
+    display: grid;
+    grid-gap:10px;
+    
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "naslov naslov"
+    "podaci  podaci"
+    "detalji detalji"
+    "karakteristike karakteristike"
+    "dugme dugme"
+    "labela2 labela2"
+    "konacna konacna"
+    
+    ;
+  }
+  
+
+  @media (max-width : 1300px){
+    body .container{
+        margin-top: 40px;
+      margin-left: 250px;
+    }
+
+  }
+
+  
+  @media (max-width : 960px){
+    body .container{
+      width: 200px;
+      margin-top: 40px;
+      margin-left: 250px;
+      grid-template-columns: 1fr ;
+      grid-template-areas: 
+      "naslov "
+      "podaci  "
+      "detalji"
+      "karakteristike "
+      "dugme "
+      "labela2"
+      "konacna "
+    
+    ;
+    }
+
+    .container .konacna{
+        padding: 0px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .container .podaci{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .detalji{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .karakteristike{     
+        display: grid;
+        grid-template-columns: 1fr;   
+          
+    }
+  
+  }
+  
+
+  .konacno{
+      color:red;
+      
+
+  }
+
+
+.naslov{
+    background-color: #692727bd;
+    grid-area: naslov;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    
+}
+
+.podaci{
+    
+    grid-area: podaci;
+    padding: 10px;
+    
+    grid-column-gap: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    
+}
+.podaci div{
+    display: flex;
+    flex-direction: column;
+}
+.detalji{
+    grid-column-gap: 90px;
+    grid-area:detalji;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detalji div{
+    display: flex;
+    flex-direction: column;
+}
+.karakteristike{
+    background-color: #99b8964f;
+    grid-area: karakteristike;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+    justify-items: center;
+    
+    
+}
+
+
+
+
+
+.dugme {
+    
+    grid-area: dugme;
+    justify-self: center;
+    
+    
+}
+
+.dugme button{
+    height: 50px;
+    width:100px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #144e1ca1;
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.konacna{
+    background-color: darkorange;
+    grid-area: konacna;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
+    grid-gap:15px;
+}
+
+.labela2{
+    grid-area: labela2;
+    background-color: #412d538e;
+    padding: 10px;
+    font-size: 15px;
+    font-style: italic;
+    color: white;
+}

@@ -1,0 +1,421 @@
+<app-kupac></app-kupac>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="container">
+        
+
+        <div class="nazad">
+            <button (click)="nazad()">nazad</button>
+        </div>
+        <div class="poslednjiput">
+            <div id="nev">
+                <div class="levo">
+                    <b>{{mikrolokacija}} - {{oglas.naziv}}</b>
+                </div>
+                <div class="desno">
+                    {{oglas.lokacija}}
+                </div>
+            </div>
+
+            <div id="sidebar">
+                <div *ngIf="trenutnaslika" class="sslicka">
+                    <img src="assets/{{trenutnaslika}}" class="vvelicinaslike" width="180" height="110">
+                </div>
+                <div class="ccekboxovi">
+                    <div *ngFor="let s of oglas.fotografije;let i=index">
+                        <input type="radio" name="slk" id="{{i}}" (click)="izaberisliku(i)" checked="checked">
+                    </div>
+                </div>
+
+                <div [class.prosecnacenaveca]="oglas.prosecna_cena>=cenaoglasapokvadratu"
+                    [class.prosecnacenamanja]="cenaoglasapokvadratu>oglas.prosecna_cena" id="cena">
+                    {{oglas.cena}}
+                </div>
+            </div>
+
+
+            <div id="content1">
+                <div class="onatri">
+                    <div>
+                        Tip: {{oglas.tip_nekretnine}}
+                    </div>
+                    <div>
+                        Kvadratura: {{oglas.kvadratura}}m2
+                    </div>
+                    <div>
+                        Broj soba: {{oglas.broj_soba}}
+                    </div>
+                    
+
+                </div>
+                <div class="dodatno">
+                    <div >
+                        Agencija: <b>{{detalji.oglasivac}}</b>
+                    </div>
+                    <div>
+                        Sprat: {{detalji.trsprat}}
+                    </div>
+                    <div>
+                        Godina izgradnje: {{detalji.godinaizgradnje}}
+                    </div>
+                    <div>
+                        Ukupna spratnost : {{oglas.spratnost}}
+                    </div>
+                    <div>
+                        Stanje nekretnine: {{detalji.stanje}}
+                    </div>
+                    <div>
+                        <div *ngIf="detalji.parking==true; else bezparkinga">
+                            Parking: da
+                        </div>
+                        <div>
+                            <ng-template #bezparkinga>
+                                Parking: ne
+                            </ng-template>
+                        </div>
+                    </div>
+                    <div>
+                        Tip grejanja: {{detalji.tipgrejanja}}
+                    </div>
+
+                </div>
+
+                <div class="dugmeomiljene">
+                    <button (click)="dodajO()">Dodaj u omiljene</button>
+                </div>
+            </div>
+
+            <main>
+                <label class="labkarakteristike">
+                    Karakteristike
+                </label>
+
+                <div>
+                    <div class="boksovi">
+                        <div>
+                            <input type="checkbox" name="terasa" [(ngModel)]="karakteristika.terasa"
+                                onclick="return false;"> Terasa
+                        </div>
+                        <div>
+                            <input type="checkbox" name="podrum" [(ngModel)]="karakteristika.podrum"
+                                onclick="return false;"> Podrum
+                        </div>
+                        <div>
+                            <input type="checkbox" name="internet" [(ngModel)]="karakteristika.internet"
+                                onclick="return false;"> Internet
+                        </div>
+                        <div>
+                            <input type="checkbox" name="lodja" [(ngModel)]="karakteristika.lodja"
+                                onclick="return false;">
+                            Lodja
+                        </div>
+                        <div>
+                            <input type="checkbox" name="garaza" [(ngModel)]="karakteristika.garaza"
+                                onclick="return false;"> Garaza
+                        </div>
+                        <div>
+                            <input type="checkbox" name="interfon" [(ngModel)]="karakteristika.interfon"
+                                onclick="return false;"> Interfon
+                        </div>
+                        <div>
+                            <input type="checkbox" name="francbalkon" [(ngModel)]="karakteristika.francbalkon"
+                                onclick="return false;"> Franc.
+                            balkon
+                        </div>
+                        <div>
+                            <input type="checkbox" name="basta" [(ngModel)]="karakteristika.basta"
+                                onclick="return false;">
+                            Sa bastom
+                        </div>
+                        <div>
+                            <input type="checkbox" name="telefon" [(ngModel)]="karakteristika.telefon"
+                                onclick="return false;"> Telefon
+                        </div>
+                        <div>
+                            <input type="checkbox" name="lift" [(ngModel)]="karakteristika.lift"
+                                onclick="return false;">
+                            Lift
+                        </div>
+                        <div>
+                            <input type="checkbox" name="klima" [(ngModel)]="karakteristika.klima"
+                                onclick="return false;">
+                            Klima
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
+            <div id="content2">
+                <label class="labkarakteristike">
+
+                    Opis
+
+                </label>
+                <div class="maliopis">
+                    <div class="opisnekretnine">
+                        {{oglas.opis}}
+                    </div>
+                    <div class="prosecnacenica">
+                        Prosecna cena na lokaciji : {{oglas.prosecna_cena}} €/m2
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br />
+
+        <div class="oglasivac">
+            <div *ngIf="oglasivac.oglasivactip=='agent'">
+                Agencija: <b>{{agencija.naziv}}</b>
+                <br />
+                Grad: {{agencija.grad}}
+                <br />
+                Adresa: {{agencija.adresa}}
+                <br />
+                PIB : {{agencija.pib}}
+                <br />
+                Ime: {{oglasivac.ime}}
+                <br>
+                Prezime: {{oglasivac.prezime}}
+                <br>
+                Broj Licence: {{oglasivac.br_licence}}
+
+
+            </div>
+
+            <div *ngIf="oglasivac.oglasivactip=='prodavac'">
+                Ime: {{oglasivac.ime}}
+                <br>
+                Prezime: {{oglasivac.prezime}}
+                <br>
+            </div>
+
+            <button (click)="prikazitelefon()">+</button>
+            <div *ngIf="telefon==true">
+                Broj telefona: {{oglasivac.telefon}}
+            </div>
+
+            <br />
+
+           
+        </div>
+
+
+        <!--
+        <div class="kontejner">
+            <div class="hed">
+                <div id="levo">
+                    <b>{{mikrolokacija}} - {{oglas.naziv}}</b>
+                </div>
+                <div id="desno">
+                    {{oglas.lokacija}}
+                </div>
+            </div>
+
+            <div class="slike">
+                <div *ngIf="trenutnaslika" class="slicka">
+                    <img src="assets/{{trenutnaslika}}" class="velicinaslike" width="180" height="110">
+                </div>
+                <div class="cekboxovi">
+                    <div *ngFor="let s of oglas.fotografije;let i=index">
+                        {{i}}<input type="radio" name="slk" id="{{i}}" (click)="izaberisliku(i)">
+                    </div>
+                </div>
+                
+                <div [class.prosecnacenaveca]="oglas.prosecna_cena>cenaoglasapokvadratu"
+                    [class.prosecnacenamanja]="cenaoglasapokvadratu>oglas.prosecna_cena" id="cena">
+                    {{oglas.cena}}
+                </div>
+                
+            </div>
+
+            <div class="podaci">
+                <div id="osnovni">
+                    <input type="text" readonly="true" [(ngModel)]="oglas.tip_nekretnine" name="tip">
+                    <input type="text" readonly="true" [(ngModel)]="oglas.kvadratura" name="kvadratura">
+                    <input type="text" readonly="true" [(ngModel)]="oglas.broj_soba" name="broj_soba">
+
+                </div>
+                <div id="dodatni">
+                    <div *ngIf="oglasivac.oglasivactip=='agent'">
+                        Agencija: <b>{{agencija.naziv}}</b>
+                    </div>
+                    Ukupna spratnost : {{oglas.spratnost}}
+                </div>
+
+                <div id="dodajomiljene">
+                    <button (click)="dodajOmiljenu()">Dodaj u omiljene</button>
+                </div>
+
+            </div>
+            <div class="karakteristike">
+                <label>
+                    Karakteristike
+                </label>
+
+
+                <div>
+                    <div id="cekbox">
+
+
+                        <input type="checkbox">
+
+                        <input type="checkbox" name="terasa" [(ngModel)]="karakteristika.terasa"
+                            onclick="return false;"> Terasa
+                        <input type="checkbox" name="podrum" [(ngModel)]="karakteristika.podrum"> Podrum
+                        <input type="checkbox" name="internet" [(ngModel)]="karakteristika.internet"> Internet
+                        <input type="checkbox" name="lodja" [(ngModel)]="karakteristika.lodja"> Lodja
+                        <input type="checkbox" name="garaza" [(ngModel)]="karakteristika.garaza"> Garaza
+                        <input type="checkbox" name="interfon" [(ngModel)]="karakteristika.interfon"> Interfon
+                        <input type="checkbox" name="francbalkon" [(ngModel)]="karakteristika.francbalkon"> Franc.
+                        balkon
+                        <input type="checkbox" name="basta" [(ngModel)]="karakteristika.basta"> Sa bastom
+                        <input type="checkbox" name="telefon" [(ngModel)]="karakteristika.telefon"> Telefon
+                        <input type="checkbox" name="lift" [(ngModel)]="karakteristika.lift"> Lift
+                        <input type="checkbox" name="klima" [(ngModel)]="karakteristika.klima"> Klima
+
+                    </div>
+                </div>
+
+            </div>
+            <section class="opis">
+                <label>
+
+                    Opis
+
+                </label>
+                <div>
+                    <div id="opis">
+                        {{oglas.opis}}
+                    </div>
+                    <div id="prosecna_cena">
+                        Prosecna cena na lokaciji : {{oglas.prosecna_cena}} €/m2
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+        -->
+
+
+
+
+        <!--
+        <div class="containerneki">
+            <div id="content1">
+                <b id="hed"> {{oglas.naziv}} </b>
+                <div id="desno">{{oglas.lokacija}}</div>
+            </div>
+
+            <div id="content2">
+                <div id="jedan">
+                    <div [class.prosecnacenaveca]="prosecnacena>oglas.cena"
+                        [class.prosecnacenamanja]="oglas.cena>prosecnacena">
+                        {{oglas.cena}}
+                    </div>
+                    <div class="slider-container">
+                        <img src="assets/1.2.jpg">
+                        <div class="menu">
+                            <label for="slide-dot-1"></label>
+                            <label for="slide-dot-2"></label>
+                            <label for="slide-dot-3"></label>
+                        </div>
+                        <input id="slide-dot-1" type="radio" name="slides" checked>
+                        <img class="slide slide-1" src="assets/1.1.jpg">
+                        <input id="slide-dot-2" type="radio" name="slides">
+
+                        <img class="slide slide-2" src="assets/1.2.jpg">
+
+                        <input id="slide-dot-3" type="radio" name="slides">
+                        <img class="slide slide-3" src="assets/1.3.jpg">
+                    </div>
+                </div>
+                <div id="jedan">
+                    <div id="jedantrireda">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="firstName" [(ngModel)]="oglas.tip_nekretnine"
+                                readonly=true />
+                            <label class="form-control-label">Tip:</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="firstName" [(ngModel)]="oglas.kvadratura"
+                                readonly=true />
+                            <label class="form-control-label">Kvadratura:</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="firstName" [(ngModel)]="oglas.broj_soba"
+                                readonly=true />
+                            <label class="form-control-label">Soba:</label>
+                        </div>
+                    </div>
+
+
+                    <div id="karakteristike">
+                        <div>
+                            Oglasivac:
+                        </div>
+                        <div>
+                            Godina izgradnje:
+                        </div>
+                        <div>
+                            Stanje nekretnine:
+                        </div>
+                        <div>
+                            Tip:grejanja:
+                        </div>
+                        <div>
+                            Sprat:
+                        </div>
+                        <div>
+                            Ukupna spratnost:
+                        </div>
+                        <div>
+                            Parking:
+                        </div>
+
+                    </div>
+
+                    <button id="dodaj" (click)="dodajOmiljenu()">Dodaj u omiljene</button>
+                </div>
+
+
+
+                <fieldset id="dva">
+                    <legend> Legenda blabla</legend>
+
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+                    Checkbox:<input type="checkbox">
+
+                </fieldset>
+                <fieldset id="tri">
+                    <legend> Legenda blabla</legend>
+                    <div>{{oglas.opis}}</div>
+                </fieldset>
+            </div>
+        </div>
+-->
+
+    </form>
+</body>
+
+</html>

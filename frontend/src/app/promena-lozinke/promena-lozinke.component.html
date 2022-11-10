@@ -1,0 +1,35 @@
+<app-administrator *ngIf="ulogovan.tip=='administrator'"></app-administrator>
+<app-oglasivac *ngIf="ulogovan.tip=='oglasivac'"></app-oglasivac>
+<app-kupac *ngIf="ulogovan.tip=='kupac'"></app-kupac>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="container">
+        <label>Stara lozinka</label>
+        <input type="password" name="staralozinka" [(ngModel)]="staralozinka">
+        <label>Nova lozinka</label>
+        <input type="password" name="novalozinka" [(ngModel)]="novalozinka"
+         pattern="(([a-z](?=.*\d)(?=.*[A-Z])(?=.*[-+_!@#$%^&*., ?]).{7,})|([A-Z](?=.*\d)(?=.*[-+_!@#$%^&*., ?]).{7,}))"#novaloz="ngModel">
+        <label>Potvrda lozinke</label>
+        <input type="password" name="potvrdalozinke" [(ngModel)]="potvrdanovelozinke" >
+
+        <button *ngIf="!novaloz.errors?.pattern" (click)="promeniLozinku()" class="promeni">Promeni</button>
+
+        <label class="poruka">{{poruka}}</label>
+        <label class="potvrda">{{potvrda}}</label>
+        <div *ngIf="novaloz.errors?.pattern" class="regularniizraz"> 
+           ! Nova lozinka nije u odgovarajucem formatu - Lozinka mora imati minimalno 8 karaktera, od toga bar jedno veliko slovo, jedan broj i jedan specijalni karakter i mora pocinjati slovom
+         </div>
+    </form>
+
+</body>
+
+</html>

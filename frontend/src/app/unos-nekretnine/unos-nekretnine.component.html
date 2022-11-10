@@ -1,0 +1,259 @@
+<app-oglasivac></app-oglasivac>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form class="container">
+
+
+        <div class="poslednjiput">
+            <div id="nev">Unesi podatke nekretnine:</div>
+
+            <div class="osnovnipodaci">
+
+                <div>
+                    <div>Tip:</div>
+                    <select name="tip" [(ngModel)]="tip">
+                        <option value="stan">stan</option>
+                        <option value="kuca">kuca</option>
+                        <option value="vikendica">vikendica</option>
+                        <option value="lokal">lokal</option>
+                        <option value="magacin">magacin</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <div>Naziv:</div>
+                    <input type="text" name="naziv" [(ngModel)]="naziv"
+                        pattern="^[a-zA-Z]+(?:(?:(\\s+|-)|( ))[a-zA-Z]+)*$" #regnaziv="ngModel">
+                </div>
+
+                <div>
+                    <div> Lokacija (grad/opstina/mikro lokacija):</div>
+                    <input type="text" name="lokacija" [(ngModel)]="lokacija"
+                        pattern="\w+(( ?)|( - ?))\w+/\w+(( ?)|( - ?))\w+/\w+(( ?)|( - ?))\w+" #reglokacija="ngModel">
+                </div>
+                <div>
+                    <div>Cena :</div>
+                    <input type="text" name="cena" [(ngModel)]="cena" pattern="\d+" #regcena="ngModel">
+                </div>
+                <div>
+                    <div>Kvadratura :</div>
+                    <input type="text" name="kvadratura" [(ngModel)]="kvadratura" pattern="\d+"
+                        #regkvadratura="ngModel">
+                </div>
+                <div>
+                    <div> Broj Soba :</div>
+                    <input type="text" name="br_doba" [(ngModel)]="br_soba" pattern="\d+" #regsoba="ngModel">
+                </div>
+                <div>
+                    <div> Spratnost : </div>
+                    <input type="text" name="spratnost" [(ngModel)]="spratnost" pattern="\d+" #regspratnost="ngModel">
+                </div>
+                <div>
+                    <div>Opis :</div>
+                    <input type="text" name="opis" [(ngModel)]="opis">
+                </div>
+                <div>
+                    <div>Fotografije :</div>
+                    <input type="file" name="fotos" [(ngModel)]="fotografije" multiple id="idfotos"
+                        accept="image/x-png,image/gif,image/jpeg" >
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="detalji">
+
+
+
+                <label><b>Detalji nekretnine:</b></label>
+                <div>
+                    <label>Godina izgradnje:</label>
+                    <div>
+                        <input type="text" name="godina" [(ngModel)]="detaljinek.godinaizgradnje" pattern="\d{4}"
+                            #reggodina="ngModel">
+                    </div>
+
+                </div>
+                <div>
+                    <label>Stanje:</label>
+                    <div>
+                        <select name="stanje" [(ngModel)]="detaljinek.stanje">
+                            <option value="izvorno">izvorno</option>
+                            <option value="renovirano">renovirano</option>
+                            <option value="LUX">LUX</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div>
+                    <label>Tip grejanja:</label>
+
+                    <div>
+                        <select name="tipgrejanja" [(ngModel)]="detaljinek.tipgrejanja">
+                            <option value="CG">CG</option>
+                            <option value="EG">EG</option>
+                            <option value="TA">TA</option>
+                            <option value="gas">gas</option>
+                            <option value="podno">podno</option>
+                            <option value="toplotne pumpe">toplotne pumpe</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div>
+                    <label>Sprat:</label>
+                    <div>
+                        <input type="text" name="sprat" [(ngModel)]="detaljinek.trsprat" pattern="\d+"
+                            #regspratic="ngModel">
+                    </div>
+
+                </div>
+                <div>
+                    <label>Parking</label>
+
+                    <input type="checkbox" name="parking" [(ngModel)]="detaljinek.parking">
+
+
+                </div>
+                <div>
+                    <label>Mesecne rezije:</label>
+                    <div>
+                        <input type="text" name="mesrezije" [(ngModel)]="detaljinek.mesrezije" pattern="\d+"
+                            #regmesrez="ngModel">
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+            <div class="karakteristike">
+                <label>Karakteristike:</label>
+                <div class="nadva">
+                    <div>
+                        <input type="checkbox" name="terasa" [(ngModel)]="karakteristika.terasa"> Terasa
+                    </div>
+                    <div>
+                        <input type="checkbox" name="podrum" [(ngModel)]="karakteristika.podrum"> Podrum
+                    </div>
+                    <div>
+                        <input type="checkbox" name="internet" [(ngModel)]="karakteristika.internet"> Internet
+                    </div>
+                    <div>
+                        <input type="checkbox" name="lodja" [(ngModel)]="karakteristika.lodja"> Lodja
+                    </div>
+                    <div>
+                        <input type="checkbox" name="garaza" [(ngModel)]="karakteristika.garaza"> Garaza
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interfon" [(ngModel)]="karakteristika.interfon"> Interfon
+                    </div>
+                    <div>
+                        <input type="checkbox" name="francbalkon" [(ngModel)]="karakteristika.francbalkon"> Franc.
+                        balkon
+                    </div>
+                    <div>
+                        <input type="checkbox" name="basta" [(ngModel)]="karakteristika.basta"> Sa bastom
+                    </div>
+                    <div>
+                        <input type="checkbox" name="telefon" [(ngModel)]="karakteristika.telefon"> Telefon
+                    </div>
+                    <div>
+                        <input type="checkbox" name="lift" [(ngModel)]="karakteristika.lift"> Lift
+                    </div>
+                    <div>
+                        <input type="checkbox" name="klima" [(ngModel)]="karakteristika.klima"> Klima
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="greske">
+
+                <div *ngIf="reggodina.errors?.pattern" class="reg">
+                    Godina ima 4 cifre
+                </div>
+                <div *ngIf="regspratic.errors?.pattern" class="reg">
+                    Sprat je broj
+                </div>
+                <div *ngIf="regmesrez.errors?.pattern" class="reg">
+                    Mesecne rezije su broj
+                </div>
+                <div *ngIf="reglokacija.errors?.pattern" class="reg" id="regex">
+                    Lokacija nije u odgovarajucem formatu.
+                </div>
+                <div *ngIf="regnaziv.errors?.pattern" class="reg" id="regex">
+                    Naziv nije u odgovarajucem formatu.
+                </div>
+                <div *ngIf="regcena.errors?.pattern" class="reg" id="regex">
+                    Cena mora biti broj.
+                </div>
+                <div *ngIf="regsoba.errors?.pattern" class="reg" id="regex">
+                    Broj soba mora biti broj.
+                </div>
+                <div *ngIf="regkvadratura.errors?.pattern" class="reg" id="regex">
+                    Kvadratura mora biti broj.
+                </div>
+                <div *ngIf="regspratnost.errors?.pattern" class="reg" id="regex">
+                    Spratnost mora biti broj.
+                </div>
+
+
+                <div *ngIf="poruka" class="poruka">
+                    {{poruka}}
+                </div>
+
+                <div>
+                    <button *ngIf="!reglokacija.errors?.pattern && !regnaziv.errors?.pattern &&
+                     !regcena.errors?.pattern && !regsoba.errors?.pattern && !regspratnost.errors?.pattern
+                     && !reggodina.errors?.pattern && !regspratic.errors?.pattern" (click)="unesi()">Unesi
+                        nekretninu</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+</body>
+
+</html>

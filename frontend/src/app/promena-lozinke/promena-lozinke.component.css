@@ -1,0 +1,62 @@
+.container{
+    margin-top: 40px;
+    display: grid;
+    justify-content: center;
+    grid-row-gap:0px;
+    
+}
+  
+@media (max-width : 1300px){
+    body .container{
+      margin-top: 40px;
+      margin-left: 270px;
+    }
+  
+}
+
+input[type=password] {
+    padding: 10px 18px;
+    margin: 4px;
+    border: 2px solid rgb(55, 255, 172);
+    border-radius: 4px;
+    
+}
+
+label{
+    color: #2f1061;
+}
+.promeni{
+    background-color: #2fc96a;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    text-transform: lowercase;
+    display: inline-block;
+    opacity: 0.6; 
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    text-align: center;
+    margin-top: 30px;
+}
+  
+.promeni:hover {opacity: 1}
+
+.poruka{
+    margin-top: 30px;
+    font-size: larger;
+    color: blueviolet;
+    width: 200px;
+
+}
+
+.potvrda{
+    margin-top: 30px;
+    font-size: larger;
+    color: #17c72e;
+    width: 200px;
+}
+
+.regularniizraz{
+    color: rgb(92, 255, 255);
+    width: 200px;
+}

@@ -1,0 +1,24 @@
+.container{
+    margin-top: 40px;
+    margin-left: 40px;
+    display: grid;
+    justify-content: center;
+  }
+  
+  @media (max-width : 1300px){
+    body .container{
+      margin-top: 40px;
+      margin-left: 250px;
+    }
+  
+  }
+  
+
+  .nema{
+    font-size: 30px;
+    color: blueviolet;
+  }
+
+  .nekretnine{
+    padding: 10px;
+  }

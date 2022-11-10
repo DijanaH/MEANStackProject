@@ -1,0 +1,21 @@
+{
+    "naziv" : "ZIDART",
+    "grad" : "Beograd",
+    "adresa" : "Ruzveltova 17",
+    "telefon" : 111234567,
+    "pib" : 88888888
+}
+{
+    "naziv" : "GIGANT",
+    "grad" : "Beograd",
+    "adresa" : "Krunska 40",
+    "telefon" : 222234567,
+    "pib" : 99999999
+}
+{
+    "naziv" : "FENIKS",
+    "grad" : "Novi Sad",
+    "adresa" : "Backa 8",
+    "telefon" : 333234567,
+    "pib" : 77777777
+}

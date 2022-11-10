@@ -1,0 +1,49 @@
+<app-administrator></app-administrator>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <form >
+            <div class="sve">
+                <label *ngIf="neodobreni_korisnici.length>0" class="labelakor">Oznaci odredjene korisnike</label>
+
+                <div *ngFor="let neodobreni of neodobreni_korisnici, let i = index" class="korisnici">
+                    <img src="assets/{{neodobreni.slika}}">
+                    <div>Ime: {{neodobreni.ime}}</div>
+                    <div>Prezime: {{neodobreni.prezime}}</div>
+                    <div>Tip: {{neodobreni.tip}}</div>
+                    <div>Grad: {{neodobreni.grad}}</div>
+                    <div>Datum_rodjenja: {{neodobreni.datum_rodjenja}}</div>
+                    <div>Telefon: {{neodobreni.telefon}}</div>
+                    <div>Mejl: {{neodobreni.mejl}}</div>
+                    <div *ngIf="neodobreni.tip=='oglasivac'">Podtip: {{neodobreni.oglasivactip}}</div>
+                    <div *ngIf="neodobreni.oglasivactip=='agent'">Agencija: {{neodobreni.agencija}}</div>
+                    <div *ngIf="neodobreni.oglasivactip=='agent'">Broj licence: {{neodobreni.br_licence}}</div>
+                    <input type="checkbox" name="prihvati-odbij" [(ngModel)]="neodobreni.admincekira">
+                </div>
+            </div>
+
+            <div class="dugmici">
+                <button *ngIf="neodobreni_korisnici.length>0" (click)="prihvati()" class="prihvati">Prihvati</button>
+                <button *ngIf="neodobreni_korisnici.length>0;else second" (click)="odbij()" class="odbij">Odbij</button>
+            </div>
+
+            <ng-template #second>
+                <div class="second">Trenutno nema korisnika na cekanju.</div>
+            </ng-template>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

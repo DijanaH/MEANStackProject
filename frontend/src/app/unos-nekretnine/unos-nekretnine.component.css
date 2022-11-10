@@ -1,0 +1,113 @@
+.poslednjiput{
+
+  margin-top: 40px;
+  display: grid;
+  height:auto;
+  width: 700px;
+  margin-left:auto;
+  margin-right: auto;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 0.2fr 1.5fr 0.7fr ;
+  grid-template-areas: 
+  "nav nav"
+  "osnovnipodaci  detalji"
+  "karakteristike karakteristike"
+  "greske greske"
+  
+  ;
+   grid-gap:0.4rem;
+
+  
+
+}
+
+
+#nev{
+  background-color: rgba(44, 66, 63, 0.979);
+  grid-area: nav;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  color: aliceblue;
+}
+
+.greske{
+  grid-area:greske;
+  padding: 20px;
+  color: red;
+}
+
+.osnovnipodaci{
+  background-color: hsla(197, 77%, 86%, 0.418);
+  grid-area:osnovnipodaci;
+  padding: 20px;
+}
+
+.detalji{
+  background-color: hsla(113, 41%, 84%, 0.459);
+  grid-area:detalji;
+  padding: 20px;
+}
+
+.karakteristike{
+  background-color: #fff241cb;
+  grid-area:karakteristike;
+  padding:20px;
+  
+}
+
+.nadva{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  
+}
+
+.osnovnipodaci{
+  padding: 10px;
+  
+}
+
+@media only screen and (max-width:1300px){
+  .poslednjiput{
+    margin-left: 250px;
+    
+
+}
+}
+
+@media only screen and (max-width:1000px){
+  .poslednjiput{
+      margin-left: 250px;
+      width: 200px;
+      height:1000px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 2fr 2fr 2fr 2fr;
+      grid-template-areas: 
+          "nav"
+          "osnovnipodaci"
+          "detalji"
+          "karakteristike"
+          "greske" 
+            
+      ;
+  
+  
+  }
+
+  .nadva{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #nev{
+
+    text-align: left;
+  }
+
+
+  
+}
+  
+  
+  
+  

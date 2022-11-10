@@ -1,0 +1,203 @@
+<form class="center">
+
+    <div>
+        <button class="nazad" (click)="nazad()">nazad</button>
+    </div>
+
+    <div class="sredina">
+        <h2>Registracija</h2>
+    </div>
+
+    <table class='middle'>
+
+
+
+        <tr>
+            <td>
+                Ime:
+            </td>
+            <td>
+                <input type="text" name='ime' [(ngModel)]='ime' required="true">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Prezime:
+            </td>
+            <td>
+                <input type="text" name="prezime" [(ngModel)]='prezime'>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Korisnicko ime:
+            </td>
+            <td>
+                <input type="text" name="kor_ime" [(ngModel)]='kor_ime'>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lozinka:
+            </td>
+            <td>
+                <input type="password" name="lozinka" [(ngModel)]='lozinka'
+                    pattern="(([a-z](?=.*\d)(?=.*[A-Z])(?=.*[-+_!@#$%^&*., ?]).{7,})|([A-Z](?=.*\d)(?=.*[-+_!@#$%^&*., ?]).{7,}))"
+                    #reglozinka="ngModel">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Potvrda lozinke:
+            </td>
+            <td>
+                <input type="password" name="potlozinka" [(ngModel)]='potvrda_lozinke'>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Grad:
+            </td>
+            <td>
+                <input type="text" name="grad" [(ngModel)]='grad'>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Datum rodjenja:
+            </td>
+            <td>
+                <input type="date" name="dat_rodjenja" [(ngModel)]='datum_rodjenja'>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fotografija:
+            </td>
+            <td>
+                <input type="file" name="foto" [(ngModel)]='foto' id="idfoto" accept="image/x-png,image/jpeg">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kontakt telefon:
+            </td>
+            <td>
+                <input type="text" name="telefon" [(ngModel)]='telefon' pattern="\d{10}" #regtelefon="ngModel">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                mejl:
+            </td>
+            <td>
+                <input type="text" name="mejl" [(ngModel)]='mejl' pattern="^\w{3,}@\w+\.\w{2,3}$" #regmejl="ngModel">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tip:
+            </td>
+            <td>
+                <select name='tip' [(ngModel)]='tip'>
+                    <option value="kupac">Kupac</option>
+                    <option value="oglasivac">Oglasivac</option>
+                    <option value="administrator">Administrator</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr *ngIf='tip=="oglasivac"'>
+            <td>
+                Tip oglasivaca:
+            </td>
+            <td>
+                <select name='ogltip' [(ngModel)]='oglasivactip'>
+                    <option value="prodavac">Prodavac</option>
+                    <option value="agent">Agent</option>
+                </select>
+
+            </td>
+        </tr>
+        <tr *ngIf='oglasivactip=="agent"'>
+            <td>
+                Agencija:
+            </td>
+            <td>
+                <select name="agencija" [(ngModel)]="agencija">
+                    <option *ngFor="let a of sveagencije" [value]="a.naziv">{{a.naziv}}</option>
+                </select>
+
+            </td>
+        </tr>
+        <tr *ngIf='oglasivactip=="agent"'>
+            <td>
+                broj licence:
+            </td>
+            <td>
+                <input type="text" name="br_licence" [(ngModel)]='br_licence'>
+
+            </td>
+        </tr>
+
+
+
+    </table>
+    <br />
+
+
+
+    <table class='middle'>
+        <tr>
+            <td colspan="3">
+                <b>Da li si robot?</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name='text1' [(ngModel)]='cap' readonly='readonly'>
+
+            </td>
+
+            <td>
+                <input type='image' src="/assets/967457.png" (click)='reloadCaptcha()' class="refresh">
+            </td>
+            <td>
+                <input type="text" name="text2" [(ngModel)]='notrobot'>
+            </td>
+        </tr>
+        <!--
+        <tr>
+            <button (click)='areyouRobot()' value="required">OK</button>
+        </tr>
+        -->
+    </table>
+    <br />
+    <div class="sredina">
+        <button class="b2" (click)='registracija()'
+            *ngIf="!reglozinka.errors?.pattern && !regmejl.errors?.pattern && !regtelefon.errors?.pattern">registruj
+            me</button>
+    </div>
+    <div class="poruka" *ngIf="poruka">
+        {{poruka}}
+    </div>
+    <div *ngIf="reglozinka.errors?.pattern" class="reg">
+        Lozinka nije u odgovarajucem formatu.
+    </div>
+    <div *ngIf="regmejl.errors?.pattern" class="reg">
+        Mejl nije u odgovarajucem formatu.
+    </div>
+    <div *ngIf="regtelefon.errors?.pattern" class="reg">
+        Telefon treba da ima 10 brojeva.
+    </div>
+</form>

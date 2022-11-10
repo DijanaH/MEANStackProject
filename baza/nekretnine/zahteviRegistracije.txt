@@ -1,0 +1,48 @@
+{
+    "slika" : "prodavac.jpg",
+    "ime" : "Lana",
+    "prezime" : "Peric",
+    "kor_ime" : "lana_prodavac",
+    "lozinka" : "Lana123.",
+    "tip" : "oglasivac",
+    "grad" : "Novi Sad",
+    "datum_rodjenja" : ISODate("1980-01-02T00:00:00.000Z"),
+    "telefon" : "641234567",
+    "mejl" : "lana@gmail.com",
+    "oglasivactip" : "prodavac",
+    "agencija" : null,
+    "br_licence" : null,
+    "id" : 1
+}
+{
+    "slika" : "agent.jpg",
+    "ime" : "XXXX",
+    "prezime" : "XXXX",
+    "kor_ime" : "kfgdskbkhd",
+    "lozinka" : "Xxxx123.",
+    "tip" : "oglasivac",
+    "grad" : "Beograd",
+    "datum_rodjenja" : ISODate("1999-01-01T00:00:00.000Z"),
+    "telefon" : "2112121211",
+    "mejl" : "xxxx@gmail.com",
+    "oglasivactip" : "agent",
+    "agencija" : "ZIDART",
+    "br_licence" : 1111,
+    "id" : 2
+}
+{
+    "slika" : "kupac.jpg",
+    "ime" : "Mila",
+    "prezime" : "Milic",
+    "kor_ime" : "mila_kupac",
+    "lozinka" : "Mila123.",
+    "tip" : "kupac",
+    "grad" : "Uzice",
+    "datum_rodjenja" : ISODate("1980-01-01T00:00:00.000Z"),
+    "telefon" : "643667892",
+    "mejl" : "mila@gmail.com",
+    "oglasivactip" : null,
+    "agencija" : null,
+    "br_licence" : null,
+    "id" : 3
+}

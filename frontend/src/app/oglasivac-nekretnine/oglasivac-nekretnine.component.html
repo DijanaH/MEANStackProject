@@ -1,0 +1,35 @@
+<app-oglasivac></app-oglasivac>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="container">
+
+        <div *ngFor = "let o of oglasi" class="nekretnine">
+            <img src = 'assets/{{o.fotografije[0]}}'>
+            <div>{{o.naziv}}</div>
+            <div>{{o.tip}}</div>
+            <div>{{o.lokacija}}</div>
+            <div>{{o.cena}}</div>
+            
+            <button *ngIf="o.prodato==false;else second" (click)="prodaj(o)">PRODATO</button>
+            <ng-template #second ><b class="prodato">PRODATO</b></ng-template>
+        </div>
+        <div *ngIf ="oglasi.length==0" class="nema">
+            Nema nekretnina na stanju.
+        </div>
+        
+
+
+    </form>
+   
+
+    
+    
+</body>
+</html>

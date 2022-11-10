@@ -1,0 +1,28 @@
+{
+    "idOglasa" : [ 
+        {
+            "oglas" : "1"
+        }, 
+        {
+            "oglas" : "4"
+        }, 
+        {
+            "oglas" : "2"
+        }, 
+        {
+            "oglas" : "5"
+        }, 
+        {
+            "oglas" : "6"
+        }
+    ],
+    "idKupca" : 4
+}
+{
+    "idOglasa" : [ 
+        {
+            "oglas" : "4"
+        }
+    ],
+    "idKupca" : 5
+}

@@ -1,0 +1,57 @@
+.container{
+    margin-top: 40px;
+    
+    display: grid;
+    
+  }
+  
+@media (max-width : 1300px){
+    body .container{
+      margin-top: 40px;
+      margin-left: 200px;
+     }
+
+    .pretraga-container{  
+        margin-left: 0;
+        
+      }
+
+      
+    .rezultati{
+    justify-self: center;
+    margin-left: 90px;
+    }
+
+    
+  
+}
+ 
+  
+.pretraga-container{
+    display: grid;
+    width: 100px;
+    justify-self: center;
+}
+
+.rezultati{
+        margin-top: 30px;
+      justify-self: center;
+      
+}
+
+.poruka{
+  color: blueviolet;
+}
+
+.regexgreske{
+  color: rgb(238, 4, 4);
+  font-size: 18px;
+}
+
+.nekretnina{
+  background-color: #c4ffffd2;
+  padding:10px;
+  border-radius: 10px;
+  
+}
+

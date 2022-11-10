@@ -1,0 +1,80 @@
+{
+    "idOglas" : "1",
+    "oglasivac" : "agencija",
+    "godinaizgradnje" : 1234,
+    "stanje" : "renovirano",
+    "tipgrejanja" : "podno",
+    "trsprat" : 2,
+    "parking" : true,
+    "mesrezije" : 400
+}
+{
+    "idOglas" : "2",
+    "oglasivac" : "agencija",
+    "godinaizgradnje" : 1999,
+    "stanje" : "renovirano",
+    "tipgrejanja" : "CG",
+    "trsprat" : 5,
+    "parking" : false,
+    "mesrezije" : 400
+}
+{
+    "idOglas" : "3",
+    "oglasivac" : "vlasnik",
+    "godinaizgradnje" : 2000,
+    "stanje" : "izvorno",
+    "tipgrejanja" : "CG",
+    "trsprat" : 1,
+    "parking" : false,
+    "mesrezije" : 100
+}
+{
+    "idOglas" : "4",
+    "oglasivac" : "agencija",
+    "godinaizgradnje" : 1990,
+    "stanje" : "renovirano",
+    "tipgrejanja" : "TA",
+    "trsprat" : 1,
+    "parking" : false,
+    "mesrezije" : 200
+}
+{
+    "idOglas" : "5",
+    "oglasivac" : "agencija",
+    "godinaizgradnje" : 2005,
+    "stanje" : "renovirano",
+    "tipgrejanja" : "podno",
+    "trsprat" : 1,
+    "parking" : true,
+    "mesrezije" : 300
+}
+{
+    "idOglas" : "6",
+    "oglasivac" : "vlasnik",
+    "godinaizgradnje" : 2010,
+    "stanje" : "izvorno",
+    "tipgrejanja" : "EG",
+    "trsprat" : 2,
+    "parking" : false,
+    "mesrezije" : 200
+}
+{
+    "idOglas" : "7",
+    "oglasivac" : "agencija",
+    "godinaizgradnje" : 2017,
+    "stanje" : "LUX",
+    "tipgrejanja" : "TA",
+    "trsprat" : 1,
+    "parking" : false,
+    "mesrezije" : 400
+}
+{
+    "idOglas" : "8",
+    "oglasivac" : "agencija",
+    "godinaizgradnje" : 2000,
+    "stanje" : "izvorno",
+    "tipgrejanja" : "gas",
+    "trsprat" : 1,
+    "parking" : false,
+    "mesrezije" : 300
+}

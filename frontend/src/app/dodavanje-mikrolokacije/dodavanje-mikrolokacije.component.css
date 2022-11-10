@@ -1,0 +1,13 @@
+.container{
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  
+  @media (max-width : 1300px){
+    body .container{
+      margin-top: 40px;
+      margin-left: 300px;
+    }
+  
+  }
+  

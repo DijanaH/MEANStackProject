@@ -1,0 +1,612 @@
+.poslednjiput{
+  margin-top: 40px;
+  display: grid;
+  height:auto;
+  width: 700px;
+  margin-left:auto;
+  margin-right: auto;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr ;
+  grid-template-areas: 
+  "nav nav"
+  "sidebar  content1"
+  "main content2"
+  
+  ;
+   grid-gap:0.4rem;
+  background-color: hsl(170, 64%, 95%);
+  border: 2px solid black;
+  
+  
+
+}
+
+
+#nev{
+  background-color: #c0bbbb;
+  grid-area: nav;
+  border-bottom: 2px solid black;
+  justify-content: space-between;
+  display: flex;
+  
+}
+.levo{
+  margin: 10px;
+  font-size: 17px;
+}
+.desno {
+  margin-right: 10px;
+  margin-top: 20px;
+  bottom: 0;
+  font-size: 13px;
+  
+}
+
+
+#sidebar{
+  margin-top:10px;
+  grid-area:sidebar;
+  display: grid;
+  position: relative;
+  justify-content: center;
+  margin-left:10px
+}
+.ccekboxovi{
+  justify-content: center;
+  display: flex;
+}
+
+#cena{
+  justify-self: right;
+  bottom: 0;
+  border-bottom: 1px solid #6cb8ff;
+  position: absolute;
+  margin-right: 20px;
+ }
+
+
+#content1{
+  margin-top: 20px;
+  grid-area:content1;
+  margin-right: 10px;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
+}
+.onatri {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+
+.onatri div{
+  background-color: #f1f1f1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px;
+  border:1px solid gray;
+  border-bottom: none;
+}
+.dodatno{
+  margin-top: 10px;
+  display: grid;
+  grid-column-gap:20px;
+  grid-template-columns: 1fr 1fr;
+}
+.dugmeomiljene{
+  justify-self: right;
+}
+
+.dugmeomiljene button{
+  background-color: hsl(197, 100%, 50%);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-transform: lowercase;
+    opacity: 0.7; 
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+}
+.dugmeomiljene button:hover{
+  opacity: 1;
+}
+
+
+main{
+  grid-area:main;
+  margin:10px;
+  
+}
+
+.labkarakteristike{
+
+background-color: #f1f1f1;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+padding-left: 10px;
+padding-right: 10px;
+border-top:3px solid #ffbe45;
+border-left:1px solid black;
+border-right:1px solid black;
+border-bottom:1px solid #f1f1f1 ;
+}
+
+.boksovi{
+background-color: #f1f1f1;
+padding: 10px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+font-size: 12px;
+border:1px solid black;
+border-collapse: unset;
+
+}
+
+
+#content2{
+  grid-area:content2;
+  margin-right:10px;
+  margin-left:10px;
+}
+
+
+.maliopis{
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid black;
+  
+  
+}
+.opisnekretnine{
+  justify-items: left;
+}
+.prosecnacenica{
+ padding: 10px;
+ text-align: right;
+ right: 10px;
+ border-bottom:3px solid hsl(202, 100%, 64%);
+}
+
+.prosecnacenaveca{
+  color:#1ec01e;
+ 
+}
+
+.prosecnacenamanja{
+  color: red;
+}
+
+.oglasivac{
+  justify-self: center;
+  background-color: #205732af;
+  width:400px;
+  text-align: center;
+  border-radius: 10px;
+  color: hsl(113, 100%, 98%);
+  font-style:italic;
+  padding: 10px;
+}
+
+
+
+
+@media only screen and (max-width:1200px){
+  .poslednjiput{
+      margin-left: 115px;
+      width: 230px;
+      height:1000px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 2fr 2fr 2fr 2fr;
+      grid-template-areas: 
+          "nav"
+          "sidebar"
+          "content1"
+          "main"
+          "content2"             
+      ;
+  }
+
+  
+  #nev{
+    display: block;
+    justify-content: center;
+  }
+
+  #sidebar{
+    margin-left:0;
+  }
+
+  #content1{
+    
+    margin-right: 0;
+    
+  }
+
+  .onatri {
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
+
+  .onatri div{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 1px solid black;
+  }
+
+  .dodatno{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .dugmeomiljene{
+    justify-self: center;
+    
+  }
+
+   
+
+  main{
+    margin-top: 10px;
+    
+  }
+
+  .boksovi{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    }
+  
+
+  .oglasivac{
+    width:200px;
+    margin-left: 120px;
+  }
+
+  .nazad{
+    margin-left: 120px;
+    position: absolute;
+  }
+
+
+}
+/*////////////////////////////////////////////////////*/
+.pokusaj{
+  position: relative;
+  min-height: 3.5em;
+  
+  
+}
+
+label.labelapokusaj{
+  background-color: #85ff75;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+  font-size: .8em;
+  height: 25px;
+  margin-left: 7px;
+}
+
+input.inputpokusaj{
+  position: absolute;
+  width: 90px;
+  bottom: 0;
+  text-align: left;
+  text-indent: 40px;
+  height: 30px;
+}
+
+
+
+/*////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////////////*/
+.container{
+  margin-top: 40px;  
+  display: grid;
+  justify-content: center;
+  
+  
+}
+
+
+
+
+@media (max-width : 1300px){
+  body .container{
+    margin-top: 40px;
+    margin-left: 130px;
+   }
+
+   
+  /*
+
+  .kontejner{
+
+    grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+            "hed"
+            "slike"
+            "podaci"
+            "karakeristike"
+            "opis"        
+        ;
+  }
+*/
+  
+  
+  
+}
+
+
+
+
+/*
+.kontejner{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.4fr 1.5fr 1.2fr;
+  height: 300px auto;
+  width:800px ;
+  grid-template-areas: 
+    "hed hed"
+    "slike podaci"
+    "karakteristike opis"
+    ;
+  background-color: hsla(0, 15%, 92%, 0.568);
+  gap:10px
+}
+
+.hed{
+  background-color: #cfcccc;
+  grid-area: hed;
+  position: relative;
+  border: 1px solid black;
+}
+.hed #levo{
+  text-align: center;
+  position: absolute;
+  left:10px;
+  bottom: 8px;   
+}
+
+.hed #desno{
+  right:20px;
+  position: absolute;
+  bottom: 0;
+}
+.slike{
+  background-color: #1ec01e;
+  grid-area: slike;
+  display: grid;
+  height: 100px auto;
+  
+}
+.slicka{
+  justify-self: center;
+  height: 100px;
+}
+
+.cekboxovi{
+  display: flex;
+  background-color: #1c87c9;
+  justify-self: center;
+  
+  
+}
+
+.podaci{
+  background-color: red;
+  grid-area: podaci;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
+  
+ 
+}
+
+.podaci #osnovni{ 
+  justify-self: center;
+  display: flex;
+  border-bottom:1px solid black;
+  column-gap: 20px;
+  margin-top: 15px;
+  
+}
+.podaci #osnovni input[type=text]{ 
+  
+  width: 100px;
+  height: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  bottom: 0;
+  border:1px solid black;
+  border-bottom: none;
+}
+.podaci #dodatni{
+  margin: 15px;
+}
+.podaci #dodajomiljene{
+ justify-self: right;
+}
+
+.karakteristike{
+  background-color: yellow;
+  grid-area: karakteristike;
+  margin: 10px;
+
+  display:grid;
+  grid-template-rows: 0.2fr 1fr;
+}
+
+.karakteristike label {
+  background: #eee; 
+  border-top: 4px solid orange; 
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  width: 120px;
+  text-align: center;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: -10px;
+  z-index: 1;
+  position: relative;
+}
+
+.karakteristike div{
+  background: #eee; 
+  border: 1px solid grey; 
+}
+
+#cekbox{
+  border: none;
+  margin: 20px;
+}
+
+
+.opis{
+  background-color: #1c87c9;
+  grid-area: opis;
+  margin: 10px;
+
+  display:grid;
+  grid-template-rows: 0.2fr 1fr;
+}
+
+.opis label {
+  background: #eee; 
+  border-top: 4px solid orange; 
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  width: 120px;
+  text-align: center;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-bottom: -10px;
+  z-index: 1;
+  position: relative;
+  
+}
+
+.opis div{
+  background: #eee; 
+  border: 1px solid grey; 
+}
+
+#opis{
+  border: none;
+  margin: 15px;
+}
+
+
+#prosecna_cena{
+ 
+  margin-left: 15px;
+  margin-right: 15px;
+  border-left:none;
+  border-right:none;
+  border-top:none;
+  border-color: hsl(212, 77%, 60%);
+}
+*/
+
+/*
+.containerneki{
+    display: grid;
+    grid-template-rows: 0.5fr 4fr;
+    grid-template-columns: 1fr;
+    height:50vh;
+    width: 110vh;
+    border:black solid 1px;
+    
+    
+}
+
+#content1{
+    background: #cfcccc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+   
+}
+
+#content2{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    font-size: 14px;
+    
+}
+
+#jedan{
+    background-color: aquamarine;
+    margin: 0.5em;
+    position: relative;
+}
+
+#jedantrireda{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    
+    
+}
+
+.form-group {
+    position: relative;
+    min-height: 3.5em;
+    
+}
+  
+input.form-control {
+    height: 3em;
+    width: 90px;
+    position: absolute;
+    
+}
+  
+label.form-control-label {
+    position: absolute;
+    font-size: .8em;
+    
+}
+
+#karakteristike{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+
+#dodaj{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.oglasivac{
+  background-color: #fff;
+}
+
+
+
+.prosecnacenaveca{
+  color:#1ec01e;
+}
+
+.prosecnacenamanja{
+  color: red;
+}
+
+*/

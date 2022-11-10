@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <h1></h1>
+
+    <form>
+
+        <table class='center'>
+            <tr>
+                <h1 style="color: black;" class='sredina'>Prijava</h1>
+            </tr>
+
+            <tr>
+                Korinsik: <input type='text' name='username' [(ngModel)]='kor_ime'>
+
+            </tr>
+
+            <tr>
+                Lozinka: <input type="password" name='password' [(ngModel)]='lozinka'>
+            </tr>
+
+            <tr>
+                <button (click)="prijava()" class="dalje">dalje</button>
+            </tr>
+            <tr>
+                <br>
+            </tr>
+            <tr class="sredina">
+                <b style="color: black;">Registracija:</b><a style="color: rgb(238, 167, 59);"
+                    routerLink='/registracija'>ovde.</a>
+            </tr>
+            <tr>
+                <br>
+            </tr>
+            <div *ngIf="poruka" class="poruka">
+                {{poruka}}    
+            </div>
+
+        </table>
+
+       
+        <div class="petnekretnina">
+            <div *ngFor ="let o of poslednjihpet" class="poslednjiput">
+
+                <div class="naziv">
+                    <b>{{o.naziv}}</b>
+                </div>
+                <div>
+                   cena: {{o.cena}}
+                </div>
+                <div>
+                    <img src="assets/{{o.random_slika}}" sizes="50px">
+                </div>
+                
+                
+            </div>
+        </div>
+        
+    </form>
+</body>
+
+</html>

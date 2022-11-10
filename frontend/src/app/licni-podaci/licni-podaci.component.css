@@ -1,0 +1,56 @@
+.container{
+    margin-top: 40px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+.grid-con{
+    display: grid;
+    justify-content: center;
+}
+  
+.podaci{
+    margin-top: 20px;
+    background-color: rgba(247, 247, 247, 0.801);
+    padding: 15px;
+    border-radius: 30px;
+    color: #080863;
+    
+}
+
+.podaci div{
+    display: flex;
+    margin: 10px;
+}
+
+@media (max-width :600px){
+    .podaci div{
+        display: grid;
+    }
+}
+  
+  @media (max-width : 1300px){
+    body .container{
+      margin-top: 40px;
+      margin-left: 250px;
+
+    }
+    
+  }
+
+  
+  
+  .poruka{
+      color: red;
+  }
+  .reg{
+      color: blueviolet;
+  }
+
+  .naslov{
+      font-size: 20px;
+      color: #080863 ;
+  }

@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+}
+
+header{
+    background-color: #20203f;
+    height: 80px;
+    width:100%;
+}
+label.dobrodosao {
+    color:white;
+    font-size: 26px;
+    line-height: 80px;
+    padding:0 30px;
+}
+
+header ul{
+    float: right;
+    margin-right: 25px;
+    
+}
+
+header ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin:0 5px;
+    
+}
+
+header ul li a{
+    color: aliceblue;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+/*za tranziciju kad se predje preko linka*/
+a:hover{ 
+    background-color: chocolate;
+    transition: .5s;
+}
+a:focus{
+    background-color: #ffbb00;
+}
+
+button{
+    background-color: #ffbb00;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    text-transform: lowercase;
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
+    display: inline-block;
+    opacity: 0.7; 
+    border: none;
+    border-radius: 3px;
+}
+
+button:hover {opacity: 1}
+
+
+@media (max-width : 1250px){
+    ul{
+        position: fixed;
+        width:200px;
+        height: 100%;
+        left:0;
+        text-align: left;
+        background-color: #20203f;
+        
+    }
+
+    header ul li {
+        display: block;
+        margin: 0;
+        
+    }
+
+    header ul li a{
+        font-size: 12px;
+        
+    }
+}

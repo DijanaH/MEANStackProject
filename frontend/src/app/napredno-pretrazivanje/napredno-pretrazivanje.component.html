@@ -1,0 +1,287 @@
+<app-kupac></app-kupac>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="container">
+        <div class="naslov">
+            NAPREDNO PRETRAZIVANJE
+        </div>
+      
+        <div class="podaci">
+            <div>
+                <label>cena od:</label>
+                <input type="text" name="cenaod" [(ngModel)]="cenaod">
+            </div>
+            <div>
+                <label>cena do:</label>
+                <input type="text" name="cenado" [(ngModel)]="cenado">
+            </div>
+            <div>
+                
+                kvadratura od:<input type="text" name="kvadraturaod" [(ngModel)]="kvadraturaod">
+            </div>
+            <div>
+                kvadratura do:<input type="text" name="kvadraturado" [(ngModel)]="kvadraturado">
+            </div>
+            <div>
+                broj soba od:<input type="text" name="brojsobaod" [(ngModel)]="brojsobaod">
+            </div>
+            <div>
+                broj soba do:<input type="text" name="brojsobado" [(ngModel)]="brojsobado">
+            </div>
+        </div>
+
+
+        <!--
+
+        <div *ngFor=" let o of rezultati">
+            <div>
+                ID:{{o.id}}
+            </div>
+            <div>
+                Naziv: <a routerLink="/detalji_nekretnine/{{o.id}}">{{o.naziv}}</a>
+            </div>
+            <div>
+                Lokacija: {{o.lokacija}}
+            </div>
+            <div>
+                Kvadratura: {{o.kvadratura}}
+            </div>
+            <div>
+                Broj soba: {{o.broj_soba}}
+            </div>
+            <div>
+                Spratnost : {{o.spratnost}}
+            </div>
+            <div>
+                Opis: {{o.opis}}
+            </div>
+            <div>
+                Cena: {{o.cena}}
+            </div>
+            <div>
+                Prosecna cena :{{o.prosecna_cena}}
+            </div>
+        </div>
+-->
+
+
+        <div class="detalji">
+
+            
+            <div>
+                <label>godina izgradnje od:</label>
+                <input type="text" name="godizgradnjeod" [(ngModel)]="godizgradnjeod">
+            </div>
+            <div>
+                godina izgradnje do:<input type="text" name="godizgradnjedo" [(ngModel)]="godizgradnjedo">
+            </div>
+            <div>
+                sprat od:<input type="text" name="spratod" [(ngModel)]="spratod">
+            </div>
+            <div>
+                sprat do:<input type="text" name="spratdo" [(ngModel)]="spratdo">
+            </div>
+            <div>
+                mesecne rezije od:<input type="text" name="mesrezijeod" [(ngModel)]="mesrezijeod">
+            </div>
+            <div>
+                mesecne rezije do:<input type="text" name="mesrezijedo" [(ngModel)]="mesrezijedo">
+            </div>
+            <div>
+                oglasivac:
+                <select name="oglasivac" [(ngModel)]="oglasivac" multiple>
+                    <option value="vlasnik">vlasnik</option>
+                    <option value="agencija">agencija</option>
+
+                </select>
+            </div>
+            <div>
+                stanje:
+                <select name="stanje" [(ngModel)]="stanje" multiple>
+                    <option value="izvorno">izvorno</option>
+                    <option value="renovirano">renovirano</option>
+                    <option value="LUX">LUX</option>
+                </select>
+            </div>
+            <div>
+                tip grejanja:
+                <select name="tipgrejanja" [(ngModel)]="tipgrejanja" multiple>
+                    <option>CG</option>
+                    <option>EG</option>
+                    <option>TA</option>
+                    <option>gas</option>
+                    <option>podno</option>
+                    <option>toplotne pumpe</option>
+
+                </select>
+            </div>
+            
+
+        </div>
+
+
+        <!--
+        DETALJIIIIIIIIII
+        <div *ngFor=" let o of detaljirezultati">
+            <div>
+                ID :{{o.idOglas}}
+            </div>
+            <div>
+                oglasivac: {{o.oglasivac}}
+            </div>
+            <div>
+                godinaizgradnje: {{o.godinaizgradnje}}
+            </div>
+            <div>
+                stanje: {{o.stanje}}
+            </div>
+            <div>
+                tip grejanja : {{o.tipgrejanja}}
+            </div>
+            <div>
+                Sprat : {{o.trsprat}}
+            </div>
+            <div>
+                Mes Rezije: {{o.mesrezije}}
+            </div>
+
+        </div>
+-->
+
+        <div class="karakteristike">
+            <b>Karakteristike</b>
+            <b></b>
+            <b></b>
+            <div>
+                terasa:<input type="checkbox" name="terasa" [(ngModel)]="terasa">
+            </div>
+            <div>
+                podrum:<input type="checkbox" name="podrum" [(ngModel)]="podrum">
+            </div>
+            <div>
+                internet:<input type="checkbox" name="internet" [(ngModel)]="internet">
+            </div>
+            <div>
+                lodja:<input type="checkbox" name="lodja" [(ngModel)]="lodja">
+            </div>
+            <div>
+                garaza:<input type="checkbox" name="garaza" [(ngModel)]="garaza">
+            </div>
+            <div>
+                interfon:<input type="checkbox" name="interfon" [(ngModel)]="interfon">
+            </div>
+            <div>
+                francbalkon:<input type="checkbox" name="francbalkon" [(ngModel)]="francbalkon">
+            </div>
+            <div>
+                basta:<input type="checkbox" name="basta" [(ngModel)]="basta">
+            </div>
+            <div>
+                telefon:<input type="checkbox" name="telefon" [(ngModel)]="telefon">
+            </div>
+            <div>
+                lift:<input type="checkbox" name="lift" [(ngModel)]="lift">
+            </div>
+            <div>
+                klima:<input type="checkbox" name="klima" [(ngModel)]="klima">
+            </div>
+
+
+        </div>
+
+        <div class="dugme">
+            <button (click)="pretrazi()">Pretrazi</button>
+        </div>
+
+        <!--
+        KARAAAAAKTERIISTIKEKEKE
+        <div *ngFor=" let o of karakteristikerazultati">
+            <div>
+                ID:{{o.idOglas}}
+            </div>
+            <div>
+                terasa: {{o.terasa}}
+            </div>
+            <div>
+                podrum: {{o.podrum}}
+            </div>
+            <div>
+                internet: {{o.internet}}
+            </div>
+            <div>
+                lodja : {{o.lodja}}
+            </div>
+            <div>
+                garaza: {{o.garaza}}
+            </div>
+            <div>
+                interfon: {{o.interfon}}
+            </div>
+            <div>
+                franc balkon :{{o.francbalkon}}
+            </div>
+            <div>
+                basta: {{o.basta}}
+            </div>
+            <div>
+                telefon: {{o.telefon}}
+            </div>
+            <div>
+                lift :{{o.lift}}
+            </div>
+            <div>
+                klima: {{o.klima}}
+            </div>
+
+        </div>
+-->
+
+        <label *ngIf="konacno.length!=0" class="labela2"><b> Konacna pretraga</b></label>
+        <div *ngIf="konacno.length!=0" class="konacna">
+            
+
+            <div *ngFor=" let o of konacno" class="konacno">
+                <div>
+                    <img src="assets/{{o.fotografije[0]}}">
+                </div>
+                <div>
+                    Naziv: <a routerLink="/detalji_nekretnine/{{o.id}}">{{o.naziv}}</a>
+                </div>
+                <div>
+                    Lokacija: {{o.lokacija}}
+                </div>
+                <div>
+                    Kvadratura: {{o.kvadratura}}
+                </div>
+                <div>
+                    Broj soba: {{o.broj_soba}}
+                </div>
+                <div>
+                    Spratnost : {{o.spratnost}}
+                </div>
+                <div>
+                    Opis: {{o.opis}}
+                </div>
+                <div>
+                    Cena: {{o.cena}}
+                </div>
+                <div>
+                    Prosecna cena :{{o.prosecna_cena}}
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>

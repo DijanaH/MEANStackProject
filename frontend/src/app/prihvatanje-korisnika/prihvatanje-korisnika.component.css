@@ -1,0 +1,100 @@
+.container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.korisnici{
+  padding: 8px;
+  color: #35354e;
+  background-color: aliceblue;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.labelakor{
+  font-size: 30px;
+  color: antiquewhite;
+  grid-area: lab;
+}
+
+.sve{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap:10px;
+  justify-content: center;
+  grid-template-areas: 
+    "lab lab lab lab"    
+    ;
+}
+
+@media (max-width : 1300px){
+  body .container{
+    margin-top: 40px;
+    margin-left: 240px;
+  }
+
+  .sve{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap:10px;
+    grid-template-areas: 
+    "lab"    
+    ;
+  }
+
+}
+
+
+
+.prihvati{
+  background-color: rgb(51, 255, 0);
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  text-transform: lowercase;
+  display: inline-block;
+  opacity: 0.6; 
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+}
+
+.prihvati:hover {opacity: 1}
+
+
+.odbij{
+  background-color: rgb(247, 135, 60);
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  text-transform: lowercase;
+  display: inline-block;
+  opacity: 0.6; 
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+}
+
+.odbij:hover {opacity: 1}
+
+
+.dugmici{
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  gap:10px;
+  
+}
+
+.second{
+  color: blueviolet;
+  padding-top: 40px;
+  font-size: 30px;
+}
+
+
+
+
+

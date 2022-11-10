@@ -1,0 +1,45 @@
+<app-kupac></app-kupac>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="container">
+
+        <div *ngFor="let o of omiljenioglasi">
+
+
+            <div>
+                <img src="assets/{{o.fotografije[0]}}">
+            </div>
+            <div>
+                Naziv: {{o.naziv}}
+            </div>
+            <div>
+                Tip: {{o.tip_nekretnine}}
+            </div>
+            <div>
+                Lokacija: {{o.lokacija}}
+            </div>
+            <div>
+                Cena: {{o.cena}}
+            </div>
+
+            <button (click)="ukloni(o.id)">UKLONI</button>
+        </div>
+        <div *ngIf="omiljenioglasi.length==0" class="poruka">
+            Nema omiljenih na stanju
+        </div>
+
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<app-administrator></app-administrator>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="container">
+        
+        <div>
+            <div>
+                <label class="labela">Unesi podatke za agenciju</label>
+            </div>
+            
+            <div>
+                Naziv:
+            </div>
+            <div>
+                 <input type="text" name="naziv" [(ngModel)]="naziv">
+            </div>
+            <div>
+                Grad:
+            </div>
+            <div>
+                 <input type="text" name="grad" [(ngModel)]="grad">
+            </div>
+            <div>
+                Adresa:
+            </div>
+            <div>
+                 <input type="text" name="adresa" [(ngModel)]="adresa">
+            </div>
+            <div>
+                Telefon:
+            </div>
+            
+            <div>
+
+                 <input type="text" name="telefon" [(ngModel)]="telefon">
+            </div>
+            <div>
+                PIB:
+            </div>
+            <div>
+                <input type="text" name="pib" [(ngModel)]="pib">
+            </div>
+            <div>
+                <button class="dodaj" (click)="dodaj()">Dodaj Agenciju</button>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+
+</html>
